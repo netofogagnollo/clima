@@ -76,23 +76,27 @@ class _ClimaPageState extends State<ClimaPage> {
               itemBuilder: (context, index) {
                 var clima = state.clima[index];
                 return Container(
-                  child: Column(
-                    children: [
-                      Text('Latitude:${clima.latitude}'),
-                      Text('Longitude:${clima.longitude}'),
-                      Text('Elevação:${clima.elevation}'),
-                      Text('Timezone:${clima.timeZone}'),
-                      Text('timeZoneAbv:${clima.timeZoneAbv}'),
-                      Text('utc:${clima.utcOffset}'),
-                      Text('Intervalo: ${clima.weather?.interval} ${clima.weatherUnits?.interval}'),
-                      Text('Dia: ${clima.weather?.isDay} ${clima.weatherUnits?.isDay}'),
-                      Text('temperature: ${clima.weather?.temperature} ${clima.weatherUnits?.temperature}'),
-                      Text('Hora: ${clima.weather?.time} ${clima.weatherUnits?.time}'),
-                      Text('ClimaCode: ${clima.weather?.weatherCode} ${clima.weatherUnits?.weatherCode ?? ''}'),
-                      Text(
-                          'Direção do Vento: ${clima.weather?.windDirection} ${clima.weatherUnits?.windDirection ?? ''}'),
-                      Text('Velocidade do Vento: ${clima.weather?.windSpeed} ${clima.weatherUnits?.windSpeed ?? ''}'),
-                    ],
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Latitude: ${clima.latitude}'),
+                        Text('Longitude: ${clima.longitude}'),
+                        Text('Elevação: ${clima.elevation}'),
+                        Text('Timezone: ${clima.timeZone}'),
+                        Text('timeZoneAbv: ${clima.timeZoneAbv}'),
+                        Text('utc: ${clima.utcOffset}'),
+                        Text('Intervalo: ${clima.weather?.interval} ${clima.weatherUnits?.interval}'),
+                        Text('Dia: ${clima.weather?.isDay} ${clima.weatherUnits?.isDay}'),
+                        Text('temperature: ${clima.weather?.temperature} ${clima.weatherUnits?.temperature}'),
+                        Text('Hora: ${clima.weather?.time} ${clima.weatherUnits?.time}'),
+                        Text('ClimaCode: ${clima.weather?.weatherCode} ${clima.weatherUnits?.weatherCode ?? ''}'),
+                        Text(
+                            'Direção do Vento: ${clima.weather?.windDirection} ${clima.weatherUnits?.windDirection ?? ''}'),
+                        Text('Velocidade do Vento: ${clima.weather?.windSpeed} ${clima.weatherUnits?.windSpeed ?? ''}'),
+                      ],
+                    ),
                   ),
                 );
               },
@@ -103,6 +107,7 @@ class _ClimaPageState extends State<ClimaPage> {
     }
 
     return Scaffold(
+        backgroundColor: Colors.blue[100],
         appBar: AppBar(
           title: Text('Clima'),
         ),
